@@ -1,24 +1,8 @@
-<p align="center"><img src="https://i.imgur.com/DIpuNTI.jpg"></p>
-
-<p align="center">
-    <a href="https://twitter.com/thewhiteh4t">
-      <img src="https://img.shields.io/badge/-TWITTER-black?logo=twitter&style=for-the-badge">
-    </a>
-    &nbsp;
-    <a href="https://twc1rcle.com/">
-      <img src="https://img.shields.io/badge/-THE WHITE CIRCLE-black?logo=&style=for-the-badge">
-    </a>
-    &nbsp;
-    <a href="https://thewhiteh4t.github.io/">
-      <img src="https://img.shields.io/badge/-BLOG-black?logo=dialogflow&style=for-the-badge">
-    </a>
-</p>
-
 <p align="center">
   <br>
-  <b>Available in</b>
+  <b>Forked and customize by ~~o3t1w~~</b>
   <br>
-  <img src="https://i.imgur.com/1wJVDV5.png">
+  <img src="https://osintsumo.com/assets/logo-cppgxvgf.png">
 </p>
 
 <p>
@@ -105,32 +89,23 @@ cd seeker/
 chmod +x install.sh
 ./install.sh
 ```
+**
 
-### BlackArch Linux
+## You should install cloudflared and use cloudflared instead of ngrok
 
-```bash
-sudo pacman -S seeker
+**
 ```
-
-### Docker
-
-```bash
-docker pull thewhiteh4t/seeker
+##Downloads cloudflared .deb and install
+wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
 ```
+To run cloudflared quick tunnel just run this commmand in a separate terminal
+```
+cloudflared tunnel
+``` 
 
-### OSX
-```bash
-git clone https://github.com/thewhiteh4t/seeker.git
-cd seeker/
-python3 seeker.py
-````
+TIP
 
-In order to run in tunnel mode, install ngrok by running this command in the terminal:
-```bash
-brew install ngrok/ngrok/ngrok
-
-ngrok http 8080
-````
+> if you have cloudflare zero trust free account and a domain setup you can create stable tunnels with custom domain
 
 ## Usage
 
@@ -181,12 +156,7 @@ $ docker run --rm -it --net ngroknet --name seeker thewhiteh4t/seeker
 $ docker run --rm -it --net ngroknet --name ngrok wernight/ngrok ngrok http seeker:8080
 ```
 
-## Local Tunnels
-Use
-```
-ssh -R 80:localhost:8080 nokey@localhost.run
-```
-as an alterntive to ngrok
+
 
 ## Demo
 
